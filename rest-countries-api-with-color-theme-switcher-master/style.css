@@ -1,0 +1,27 @@
+/*for light mode toggle*/
+:root[data-theme="light"] {
+    --background-color: hsl(0, 0%, 98%);
+    --element-background: hsl(0, 0%, 100%);
+    --text-color: hsl(200, 15%, 8%);
+    --input-color: hsl(0, 0%, 52%);
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/*for dark mode toggle*/ 
+:root[data-theme="dark"] {
+    --background-color: hsl(207, 26%, 17%);
+    --element-background: hsl(209, 23%, 22%);
+    --text-color: hsl(0, 0%, 100%);
+    --input-color: hsl(0, 0%, 100%);
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/*for BUNNY MODE MWAH!*/
+:root[data-theme="bunny"] {
+    --background-image: url(https://i3.glitter-graphics.org/pub/997/997353uqt17regj7.gif);
+    --element-bg: linear-gradient(135deg, #ff85d1 0%, #ffc4e8 100%);
+    --text-color: #ff1493;
+    --input-color: #ff69b4;
+    --shadow: rgba(255, 20, 147, 0.3);
+}
+
