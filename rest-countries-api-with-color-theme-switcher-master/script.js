@@ -109,5 +109,15 @@ searchInput.addEventListener('input', (e) => {
 
 //the region filter
 regionFilter.addEventListener('change', (e) => {
-    const selected region
-})
+    const selectedRegion = e.target.value;
+    if (selectedRegion === '') {
+        displayCountries(allCountries);
+    } else {
+        const filtered = allCountries.filter(country =>
+            country.region === selectedRegion
+        );
+        displayCountries(filtered);
+    }
+});
+//fetch countries when page loads. 
+fetchCountries();
