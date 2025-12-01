@@ -18,11 +18,11 @@
 
 /*for BUNNY MODE MWAH!*/
 :root[data-theme='bunny'] {
-    --background-image: url(https://i3.glitter-graphics.org/pub/997/997353uqt17regj7.gif);
-    --element-bg: linear-gradient(135deg, #ff85d1 0%, #ffc4e8 100%);
-    --text-color: #ff1493;
+    --background-image: url('./images/candybg.png');
+    --element-bg: linear-gradient(135deg, #fad6ec 0%, #fde6f4 100%);
+    --text-color: #d81e81;
     --input-color: #ff69b4;
-    --shadow: rgba(255, 20, 147, 0.3);
+    --shadow: rgba(136, 10, 77, 0.3);
 }
 
 * {
@@ -43,12 +43,28 @@ body {
 
 /*ayyyyye bunny theme for body background n cursor*/
 [data-theme='bunny'] body {
-    background: linear-gradient(135deg, #ff6ec4 0%, #ffb3d9 50%, #ffd4e5 100%);
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><text y="18" font-size="18">&#129655;</text></svg>'), auto;
+    background-image: url('./images/candybg.png');
+    background-repeat: repeat;
+    background-size: 150px;
+    background-attachment: fixed;
+    background-color: #f7578c;
+    animation: floatHearts 20s infinite linear;
 }
 
 [data-theme='bunny'] * {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><text y="18" font-size="18">&#129655;</text></svg>'), auto;
+  cursor: url(https://ani.cursors-4u.net/symbols/sym-8/sym761.ani), url(https://ani.cursors-4u.net/symbols/sym-8/sym761.png), auto !important;
+}
+
+[data-theme='bunny'] button:hover,
+[data-theme='bunny'] a:hover,
+[data-theme='bunny'] .country-card:hover,
+[data-theme='bunny'] [onclick]:hover {
+    cursor:url(https://ani.cursors-4u.net/symbols/sym-8/sym761.ani), url(https://ani.cursors-4u.net/symbols/sym-8/sym761.png), pointer !important;
+}
+
+/*lil bounce effect to buttons*/
+[data-theme='bunny'] button {
+    transition: transform 0.3s ease;
 }
 
 /*for the floting emojis in bunny mode. hides it in light/dark toggle*/
@@ -118,8 +134,8 @@ header {
 
 /*the header above but sexier for bunny mode*/
 [data-theme='bunny'] header {
-    background: linear-gradient(135deg, #ff85d1 0%, #ffc4e8 100%);
-    border-bottom: 3px solid #ff1493;
+    background: linear-gradient(135deg, #ff98e5 0%, #ff85d0 100%);
+    border-bottom: 3px solid #ff53af;
     box-shadow: 0 4px 8px rgba(255, 20, 147, 0.4);
 }
 
@@ -132,19 +148,19 @@ header .container {
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 27px;
   font-weight: 800;
 }
 
 /* sparkly gradient text in bunny mode */
 [data-theme='bunny'] h1 {
-  background: linear-gradient(45deg, #ff1493, #ff69b4, #ff1493);
+  background: linear-gradient(45deg, #ff3fa6, #ffbbdd, #f00080);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: sparkle 3s linear infinite;
-  text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.3);
+  text-shadow: 2px 2px 4px rgba(145, 6, 80, 0.3);
 }
 
 /* sparkle animation makes gradient move*/
@@ -254,7 +270,7 @@ main {
 #region-filter {
   width: 100%;
   padding: 16px 24px;
-  background: var(--element-bg);
+  background-color: white;
   border: none;
   border-radius: 8px;
   color: var(--text-color);
