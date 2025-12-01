@@ -111,32 +111,33 @@ if (countriesContainer && searchInput && regionFilter) {
                 window.location.href = `detail.html?country=${countryCode}`;
             });
         });
-    }}
-
-//search bar functionality
-searchInput.addEventListener('input', (e) => {
-    //the search input that triggered (e)/the event. line is saying e.target was triggered on the users input, whatevr user types will be lowercase
-    const searchItem = e.target.value.toLowerCase();
-    //filtering
-    const filtered = allCountries.filter(country =>
-        country.name.common.toLowerCase().includes(searchItem) //filters by common country name, is lowercase, and checcks if the country name was included in user search.
-    );
-    //display filtered results-TAdA
-    displayCountries(filtered);    
-});
-
-//the region filter
-regionFilter.addEventListener('change', (e) => {
-    const selectedRegion = e.target.value;
-    if (selectedRegion === '') {
-        displayCountries(allCountries);
-    } else {
-        const filtered = allCountries.filter(country =>
-            country.region === selectedRegion
-        );
-        displayCountries(filtered);
     }
-});
 
-//fetch countries when page loads. 
-fetchCountries()
+    //search bar functionality
+    searchInput.addEventListener('input', (e) => {
+        //the search input that triggered (e)/the event. line is saying e.target was triggered on the users input, whatevr user types will be lowercase
+        const searchItem = e.target.value.toLowerCase();
+        //filtering
+        const filtered = allCountries.filter(country =>
+            country.name.common.toLowerCase().includes(searchItem) //filters by common country name, is lowercase, and checcks if the country name was included in user search.
+        );
+        //display filtered results-TAdA
+        displayCountries(filtered);    
+    });
+
+    //the region filter
+    regionFilter.addEventListener('change', (e) => {
+        const selectedRegion = e.target.value;
+        if (selectedRegion === '') {
+            displayCountries(allCountries);
+        } else {
+            const filtered = allCountries.filter(country =>
+                country.region === selectedRegion
+            );
+            displayCountries(filtered);
+        }
+    });
+
+    //fetch countries when page loads. 
+    fetchCountries();
+}
