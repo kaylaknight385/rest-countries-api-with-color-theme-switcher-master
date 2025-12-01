@@ -68,7 +68,7 @@ async function fetchCountryDetails() {
 
   try {
     //correct API endpoint without duplicate country codes
-    const response = await fetch(`https://restcountries.com/v3.1/alpha?codes=us,gb,fr,de,jp,cn,br,it,ru,ca,mx,au,in,za/${countryCode}`);
+    const response = await fetch(`https://restcountries.com/v3.1/alpha/${countryCode}`);
     if (!response.ok) throw new Error('Country not found');
     
     const data = await response.json();
