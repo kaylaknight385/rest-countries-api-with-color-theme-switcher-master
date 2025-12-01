@@ -120,5 +120,16 @@ regionFilter.addEventListener('change', (e) => {
         displayCountries(filtered);
     }
 });
+
+// click event to country cards (using event delegation)
+countriesContainer.addEventListener('click', (e) => {
+  const card = e.target.closest('.country-card');
+  if (card) {
+    const countryCode = card.dataset.country;
+    // goesto detailage with country code in URL
+    window.location.href = `detail.html?country=${countryCode}`;
+  }
+});
+
 //fetch countries when page loads. 
 fetchCountries();
