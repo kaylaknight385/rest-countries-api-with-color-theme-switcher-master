@@ -1,14 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Where in the world?</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <link rel="preconnect" href="https://fonts.google.com/specimen/Nunito+Sans">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country Details</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+  <!-- the floating pixels for Bunny mode -->
+  <div class="bunnykay-decorations">
+    <img src="https://i.imgur.com/JArUfPy.gif" class="floating-heart" alt="pixel heart">
+    <img src="https://i.imgur.com/DkfTC8n.gif" class="floating-heart" alt="pixel star">
+    <img src="https://i.imgur.com/kuohCUc.gif" class="floating-heart" alt="pixel sparkle">
+    <img src="https://i.imgur.com/dMTb9Pg.gif" class="floating-heart" alt="pixel flower">
+    <img src="https://i.imgur.com/5cOAwmY.gif" class="floating-heart" alt="pixel butterfly">
+    <img src="https://i.imgur.com/ULvKShM.gif" class="floating-heart" alt="pixel bow">
+  </div>
+  <header>
+    <div class="container">
+      <h1>Where in the world?</h1>
+      <button id="theme-toggle">
+        <span id="theme-icon">🌙</span> 
+        <span id="theme-text">Dark Mode</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- maaaaain -->
+  <main>
+    <div class="container">
+      <!-- back Button -->
+      <button id="back-button" class="back-btn">
+        ← Back
+      </button>
+
+      <!-- country Details -->
+      <div id="country-detail" class="detail-content">
+        <p class="loading">Loading country details...</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="detail.js"></script>
 </body>
 </html>
