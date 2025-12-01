@@ -77,9 +77,9 @@ function displayCountries(countries) {
     // create HTML for each country and join together
   countriesContainer.innerHTML = countries.map(country => {
     // format data so it looks like sumn
-    const population = country.population.toLocaleString(); // adds commas
-    const region = country.region || 'N/A';
-    const capital = country.capital ? country.capital[0] : 'N/A';
+    const population = country.population.toLocaleString(); // adds commas so turns 10000 to 10,000
+    const region = country.region || 'N/A'; //if region is missing use N/A as response 
+    const capital = country.capital ? country.capital[0] : 'N/A'; //if they have a capital jus give me the first one, otherwise just use N/A
     
     // return HTML string for one country card
     return `
@@ -95,3 +95,19 @@ function displayCountries(countries) {
     `;
   }).join(''); //.join('') jus combines array into one nice string
 
+//search bar functionality
+searchInput.addEventListener('input', (e) => {
+    //the search input that triggered (e)/the event. line is saying e.target was triggered on the users input, whatevr user types will be lowercase
+    const searchItem = e.target.value.toLowerCase();
+    //filtering
+    const filtered = allCountries.filter(country =>
+        country.name.common.toLowerCase().includes(seachTerm) //filters by common country name, is lowercase, and checcks if the country name was included in user search.
+    );
+    //display filtered results-TAdA
+    displayCountries(filtered);    
+});
+
+//the region filter
+regionFilter.addEventListener('change', (e) => {
+    const selected region
+})
