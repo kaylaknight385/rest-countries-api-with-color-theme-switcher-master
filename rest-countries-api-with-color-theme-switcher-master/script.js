@@ -6,46 +6,55 @@ const html = document.documentElement;
 
 //save current theme to local storage everytime u get on page ooooor default to light
 let currentTheme = localStorage.getItem('theme') || 'light';
-html.setAttribute('data-theme', currentTheme);
-updateThemeButton(currentTheme);
 
-//when button is clicked, it will cylce thru the themes
-themeToggle.addEventListener('click', () => {
-    //it gon cycle thru light-dark-bunny-light
-    if (currentTheme === 'light') {
-        currentTheme = 'dark'
-    } else if (currentTheme === 'dark') {
-        currentTheme = 'bunny';
-    } else {
-        currentTheme = 'light';
-    }
-
+if (!themeToggle || !themeIcon || !themeText) {
+    console.log("Theme elements not found - this is okay on detail page!");
+} else {
+    //apply saved theme on load
     html.setAttribute('data-theme', currentTheme);
-    //jus saves to local storage 
-    localStorage.setItem('theme', currentTheme,)
-    //updates the button icon/text
-    updateThemeButton(currentTheme)
-});
+    updateThemeButton(currentTheme);
+
+    //when button is clicked, it will cylce thru the themes
+    themeToggle.addEventListener('click', () => {
+        //it gon cycle thru light-dark-bunny-light
+        if (currentTheme === 'light') {
+            currentTheme = 'dark';
+        } else if (currentTheme === 'dark') {
+            currentTheme = 'bunny';
+        } else {
+            currentTheme = 'light';
+        }
+
+        html.setAttribute('data-theme', currentTheme);
+        //jus saves to local storage 
+        localStorage.setItem('theme', currentTheme);
+        //updates the button icon/text
+        updateThemeButton(currentTheme);
+    });
+}
 
 function updateThemeButton(theme) {
+    if (!themeIcon || !themeText) return;
+    
     if (theme === 'light') {
-        themeIcon.innerHTML = '&#127769';
+        themeIcon.innerHTML = '&#127769;';
         themeText.textContent = 'Dark Mode';
     } else if (theme === 'dark') {
-        themeIcon.innerHTML = '&#128048';
-        themeText.textContent = 'Bunny Mode'
+        themeIcon.innerHTML = '&#128048;';
+        themeText.textContent = 'Bunny Mode';
     } else {
         themeIcon.innerHTML = '&#9728;';
-        themeText.textContent = 'Light Mode'
+        themeText.textContent = 'Light Mode';
     }
 }
 
-//API TIME. Grabbing element from html
+//API TIME. grabbing element from html
 const countriesContainer = document.getElementById('countries-container');
 const searchInput = document.getElementById('search-input');
 const regionFilter = document.getElementById('region-filter');
 
-let allCountries = []
+if (countriesContainer && searchInput && regionFilter) {
+    let allCountries = [];
 
 //fetching from rest countries API
 async function fetchCountries() {
@@ -64,6 +73,7 @@ async function fetchCountries() {
         //IF anything goes wrong. show this error and dont crash plzzzz <3
         countriesContainer.innerHTML = `<p class="loading">Error loading up them countries: ${error.message}</p>`;
     }
+}
 }
 
 //display the countries but in grid
@@ -94,6 +104,14 @@ function displayCountries(countries) {
       </div>
     `;
   }).join(''); //.join('') jus combines array into one nice string
+
+  //add click handlers to country cards so they go to detail page
+  document.querySelectorAll('.country-card').forEach(card => {
+      card.addEventListener('click', () => {
+          const countryCode = card.getAttribute('data-country');
+          window.location.href = `detail.html?country=${countryCode}`;
+      });
+  });
 }
 
 //search bar functionality
@@ -102,7 +120,7 @@ searchInput.addEventListener('input', (e) => {
     const searchItem = e.target.value.toLowerCase();
     //filtering
     const filtered = allCountries.filter(country =>
-        country.name.common.toLowerCase().includes(searchTerm) //filters by common country name, is lowercase, and checcks if the country name was included in user search.
+        country.name.common.toLowerCase().includes(searchItem) //filters by common country name, is lowercase, and checcks if the country name was included in user search.
     );
     //display filtered results-TAdA
     displayCountries(filtered);    
@@ -121,15 +139,5 @@ regionFilter.addEventListener('change', (e) => {
     }
 });
 
-// click event to country cards (using event delegation)
-countriesContainer.addEventListener('click', (e) => {
-  const card = e.target.closest('.country-card');
-  if (card) {
-    const countryCode = card.dataset.country;
-    // goesto detailage with country code in URL
-    window.location.href = `detail.html?country=${countryCode}`;
-  }
-});
-
 //fetch countries when page loads. 
-fetchCountries();
+fetchCountries()
