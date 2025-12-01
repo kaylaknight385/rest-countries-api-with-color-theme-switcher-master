@@ -156,10 +156,42 @@ h1 {
 
 
 /*locking in its 12am. get this shi pretty NOW*/
-
+/*togglebutttonnnn*/
 
 #theme-toggle {
-    background: none;
-    border: none;
-    color: var(--shadow)
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+#theme-toggle:hover {
+  background: var(--bg-color);
+}
+
+/*we see it, bunny mode has he own toggle button yes*/
+[data-theme="bunnykay"] #theme-toggle {
+  background: linear-gradient(135deg, #ff1493, #ff69b4);
+  color: white;
+  border: 2px solid white;
+  font-weight: 800;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
