@@ -91,7 +91,13 @@ Click any country card to navigate to a detail page showing:
 <img width="1908" height="900" alt="image" src="https://github.com/user-attachments/assets/cb4cca7c-2f49-4bd9-8047-7d6786f70c85" />
 
 
+## Reflection!
+This project had its ups and downs, but I'm really proud of the final result. The bunny mode theme turned out better than I expected - the floating pixels, gradient text effects, and music player all came together to create something visually engaging. Getting the theme switcher to work across both pages and save preferences to local storage was also a major accomplishment for me.
+However, I definitely struggled with implementing the detail page. When I first added it, everything broke and I spent a significant amount of time debugging. The API endpoint was incorrectly structured, and my JavaScript variable scope was completely wrong. Variables were declared in places where other functions couldn't access them, which caused multiple errors. I also had a typo in my HTML class name that took me way too long to catch.
 
+What I learned from this experience is that code organization is crucial. Proper variable scoping and consistent naming conventions would have saved me hours of troubleshooting. Like fr.... I also discovered the importance of the defer attribute on script tags when JavaScript needs to wait for the DOM to fully load. Always forget about them until 3 hours into a degubbing frenzy. DONT FORGET DEFER. Additionally, I learned that asking for help when you're stuck IS A MUST. REACH OUT. WATCH VIDEOS. READ FORUMS.
+
+For future projects, I would plan my file structure more carefully from the beginning. Commenting throughout my code helped a whole bunch though and I plan to really continue that to help me understand better. Despite the challenges, I'm satisfied with the outcome and HAPPY to be done.
 
 ## Credits
 
