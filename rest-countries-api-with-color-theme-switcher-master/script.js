@@ -62,6 +62,36 @@ async function fetchCountries() {
         displayCountries(allCountries);
     } catch (error) {
         //IF anything goes wrong. show this error and dont crash plzzzz <3
-        countriesContainer.innerHTML = `<p class=`
+        countriesContainer.innerHTML = `<p class="loading">Error loading up them countries: ${error.message}</p>`;
     }
 }
+
+//display the countries but in grid
+function displayCountries(countries) {  
+    // if no countries, show this 
+    if (countries.length === 0) {
+    countriesContainer.innerHTML = '<p class="loading">No countries found!</p>';
+    return;
+  }
+
+    // create HTML for each country and join together
+  countriesContainer.innerHTML = countries.map(country => {
+    // format data so it looks like sumn
+    const population = country.population.toLocaleString(); // adds commas
+    const region = country.region || 'N/A';
+    const capital = country.capital ? country.capital[0] : 'N/A';
+    
+    // return HTML string for one country card
+    return `
+      <div class="country-card" data-country="${country.cca3}">
+        <img src="${country.flags.png}" alt="Flag of ${country.name.common}">
+        <div class="country-info">
+          <h2>${country.name.common}</h2>
+          <p><strong>Population:</strong> ${population}</p>
+          <p><strong>Region:</strong> ${region}</p>
+          <p><strong>Capital:</strong> ${capital}</p>
+        </div>
+      </div>
+    `;
+  }).join(''); //.join('') jus combines array into one nice string
+
