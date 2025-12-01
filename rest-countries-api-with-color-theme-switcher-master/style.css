@@ -51,7 +51,7 @@ body {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><text y="18" font-size="18">&#129655;</text></svg>'), auto;
 }
 
-/*for the floting emojis in bunny mode*/
+/*for the floting emojis in bunny mode. hides it in light/dark toggle*/
 .bunny-decor {
     display: none;
     position: fixed;
@@ -63,3 +63,13 @@ body {
     z-index: 9999;
 }
 
+/*shows the emojis only in bunny mode*/
+[data-theme='bunny'] .bunny-decor {
+    display: block;
+}
+
+
+.floating-heart {
+    position: absolute;
+    font-size
+}
