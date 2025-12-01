@@ -157,7 +157,6 @@ h1 {
 
 /*locking in its 12am. get this shi pretty NOW*/
 /*togglebutttonnnn*/
-
 #theme-toggle {
   background: none;
   border: none;
@@ -321,7 +320,8 @@ main {
   75% { border-color: #ff85d1; }
 }
 
-[data-theme='bunny'] .country-card:hover {
+/*period its own hover*/
+[data-theme='bunny'] .country-card:hover { 
   transform: translateY(-10px) rotate(2deg);
   box-shadow: 0 12px 24px rgba(255, 20, 147, 0.6);
 }
@@ -393,6 +393,7 @@ main {
   border: 2px solid #ff1493;
   color: #fff;
 }
+
 
 .detail-content {
   display: grid;
@@ -489,7 +490,29 @@ main {
   color: #fff;
 }
 
-/* Responsive */
+/* responsive - mobilllle */
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column; /* stack them vertically for tiiiiny screen */
+    align-items: stretch;
+  }
+  
+  .search-wrapper,
+  .filter-wrapper {
+    width: 100%;
+    min-width: 100%;
+  }
+  
+  .countries-grid {
+    grid-template-columns: 1fr; /* onyl one column shows for grid */
+    gap: 40px;
+  }
+  
+  h1 {
+    font-size: 18px;
+  }
+}
+
 @media (max-width: 968px) {
   .detail-content {
     grid-template-columns: 1fr;
@@ -504,4 +527,6 @@ main {
   .detail-info h2 {
     font-size: 24px;
   }
+
+  
 }
