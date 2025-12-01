@@ -39,3 +39,29 @@ function updateThemeButton(theme) {
         themeText.textContent = 'Light Mode'
     }
 }
+
+//API TIME. Grabbing element from html
+const countriesContainer = document.getElementById('countries-container');
+const searchInput = document.getElementById('search-input');
+const regionFilter = document.getElementById('region-filter');
+
+let allCountries = []
+
+//fetching from rest countries API
+async function fetchCountries() {
+    try {
+        //making that api request
+        const response = await fetch('https://restcountries.com/v3.1/all');
+
+        if (!response.ok) throw new Error ('Failed to fetch them countries...');
+        
+        const data = await response.json();
+
+        allCountries = data;
+
+        displayCountries(allCountries);
+    } catch (error) {
+        //IF anything goes wrong. show this error and dont crash plzzzz <3
+        countriesContainer.innerHTML = `<p class=`
+    }
+}
