@@ -29,13 +29,13 @@ themeToggle.addEventListener('click', () => {
 
 function updateThemeButton(theme) {
     if (theme === 'light') {
-        themeIcon.textContent = '&#127769';
+        themeIcon.innerHTML = '&#127769';
         themeText.textContent = 'Dark Mode';
     } else if (theme === 'dark') {
-        themeIcon.textContent = '&#128048';
+        themeIcon.innerHTML = '&#128048';
         themeText.textContent = 'Bunny Mode'
     } else {
-        themeIcon.textContent = '&#9728;';
+        themeIcon.innerHTML = '&#9728;';
         themeText.textContent = 'Light Mode'
     }
 }
