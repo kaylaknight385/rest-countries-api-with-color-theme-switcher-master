@@ -137,7 +137,7 @@ h1 {
 }
 
 /* sparkly gradient text in bunny mode */
-[data-theme="bunnykay"] h1 {
+[data-theme='bunny'] h1 {
   background: linear-gradient(45deg, #ff1493, #ff69b4, #ff1493);
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -179,7 +179,7 @@ h1 {
 }
 
 /*we see it, bunny mode has he own toggle button yes*/
-[data-theme="bunnykay"] #theme-toggle {
+[data-theme='bunny'] #theme-toggle {
   background: linear-gradient(135deg, #ff1493, #ff69b4);
   color: white;
   border: 2px solid white;
@@ -194,4 +194,86 @@ h1 {
   50% {
     transform: scale(1.05);
   }
+}
+
+/*ight main content, spending too much on just the TOP OF THE PAGE*/
+main {
+  padding: 40px 0;
+}
+
+/*search n filter controls*/
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.search-wrapper {
+  flex: 1;
+  min-width: 300px;
+}
+
+/*pretty modern sleek seacrch baaaar*/
+#search-input {
+  width: 100%;
+  padding: 16px 24px;
+  background: var(--element-bg);
+  border: none;
+  border-radius: 8px;
+  color: var(--text-color);
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: all 0.3s;
+}
+
+/*lmao u seeeeee it*/
+[data-theme='bunny'] #search-input {
+  background: linear-gradient(135deg, #ff85d1 0%, #ffc4e8 100%);
+  border: 2px solid #ff1493;
+  color: #fff;
+  font-weight: 600;
+}
+
+[data-theme='bunny'] #search-input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#search-input:focus {
+  outline: none;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.filter-wrapper {
+  min-width: 200px;
+}
+
+/*make that region filter pretty dammit!*/
+#region-filter {
+  width: 100%;
+  padding: 16px 24px;
+  background: var(--element-bg);
+  border: none;
+  border-radius: 8px;
+  color: var(--text-color);
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  box-shadow: 0 2px 8px var(--shadow);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+[data-theme='bunny'] #region-filter {
+  background: linear-gradient(135deg, #ff85d1 0%, #ffc4e8 100%);
+  border: 2px solid #ff1493;
+  color: #fff;
+  font-weight: 600;
+}
+
+#region-filter:focus {
+  outline: none;
+  box-shadow: 0 4px 12px var(--shadow);
 }
