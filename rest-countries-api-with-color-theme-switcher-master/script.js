@@ -20,7 +20,7 @@ themeToggle.addEventListener('click', () => {
         currentTheme = 'light';
     }
 
-    html.setAttribute(data-theme, currentTheme);
+    html.setAttribute('data-theme', currentTheme);
     //jus saves to local storage 
     localStorage.setItem('theme', currentTheme,)
     //updates the button icon/text
@@ -29,10 +29,10 @@ themeToggle.addEventListener('click', () => {
 
 function updateThemeButton(theme) {
     if (theme === 'light') {
-        themeIcon.textContent = '&#127769;';
+        themeIcon.textContent = '&#127769';
         themeText.textContent = 'Dark Mode';
     } else if (theme === 'dark') {
-        themeIcon.textContent = '&#128048;';
+        themeIcon.textContent = '&#128048';
         themeText.textContent = 'Bunny Mode'
     } else {
         themeIcon.textContent = '&#9728;';
@@ -53,7 +53,7 @@ async function fetchCountries() {
         //making that api request
         const response = await fetch('https://restcountries.com/v3.1/all');
 
-        if (!response.ok) throw new Error ('Failed to fetch them countries...');
+        if (!response.ok) throw new Error ('Failed to fetch them...');
         
         const data = await response.json();
 
@@ -94,6 +94,7 @@ function displayCountries(countries) {
       </div>
     `;
   }).join(''); //.join('') jus combines array into one nice string
+}
 
 //search bar functionality
 searchInput.addEventListener('input', (e) => {
@@ -101,7 +102,7 @@ searchInput.addEventListener('input', (e) => {
     const searchItem = e.target.value.toLowerCase();
     //filtering
     const filtered = allCountries.filter(country =>
-        country.name.common.toLowerCase().includes(seachTerm) //filters by common country name, is lowercase, and checcks if the country name was included in user search.
+        country.name.common.toLowerCase().includes(searchTerm) //filters by common country name, is lowercase, and checcks if the country name was included in user search.
     );
     //display filtered results-TAdA
     displayCountries(filtered);    
