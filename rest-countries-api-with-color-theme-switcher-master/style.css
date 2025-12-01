@@ -104,5 +104,30 @@ body {
   }
 }
 
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
+header {
+    background: var(--element-bg);
+    box-shafow: 0 2px 4px var(--shadow)
+    padding: 20px 0;
+}
+
+/*the header above but sexier for bunny mode*/
+[data-theme='bunny'] header {
+    background: linear-gradient(135deg, #ff85d1 0%, #ffc4e8 100%);
+    border-bottom: 3px solid #ff1493;
+    box-shadow: 0 4px 8px rgba(255, 20, 147, 0.4);
+}
+
+
+/* flexbox to put title and button on same line */
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
