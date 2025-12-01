@@ -51,7 +51,7 @@ let allCountries = []
 async function fetchCountries() {
     try {
         //making that api request
-        const response = await fetch('https://restcountries.com/v3.1/all');
+        const response = await fetch('https://restcountries.com/v3.1/alpha?codes=us,gb,fr,de,jp,cn,br,it,ru,ca,mx,au,in,za');
 
         if (!response.ok) throw new Error ('Failed to fetch them...');
         
