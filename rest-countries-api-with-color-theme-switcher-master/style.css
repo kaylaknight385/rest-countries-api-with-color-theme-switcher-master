@@ -404,13 +404,14 @@ main {
   box-shadow: 0 4px 12px var(--shadow);
 }
 
+/*back button in bunny mode*/
 [data-theme='bunny'] .back-btn {
   background: linear-gradient(135deg, #ff85d1 0%, #ffc4e8 100%);
   border: 2px solid #ff1493;
   color: #fff;
 }
 
-
+/*detail paaaaage*/
 .detail-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -425,20 +426,21 @@ main {
   border-radius: 8px;
 }
 
+/*gives flag more color/sat in bunny mode with cute borderrr*/
 [data-theme='bunny']
  .detail-flag {
-  filter: saturate(1.5) hue-rotate(10deg);
-  border: 3px solid #ff1493;
+  filter: saturate(2) hue-rotate(10deg);
+  border: 3px solid #db036f;
 }
 
 .detail-info h2 {
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 800;
   margin-bottom: 24px;
 }
 
 [data-theme='bunny'] .detail-info h2 {
-  background: linear-gradient(45deg, #ff1493, #ff69b4, #ff1493);
+  background: linear-gradient(45deg, #db0075, #ff86c3, #ff1493);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -453,10 +455,12 @@ main {
   margin-bottom: 32px;
 }
 
+/*detail page text*/
 .detail-info p {
   font-size: 16px;
   line-height: 2;
   margin-bottom: 8px;
+  color: #630135;
 }
 
 .detail-info strong {
